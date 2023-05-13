@@ -27,10 +27,30 @@ Back-End Development:
 - 9 - As a user, you should be able to easily add songs to your playlists, whether from the search results or while a song is playing.
 - 10 - As a user, you should be able to navigate through the app effortlessly with a sleek and user-friendly interface that enhances your overall music exploration experience.
 
+# Problem that EchoBeats solves
+
+EchoBeats solves the problem of uninspiring music experiences by providing a captivating and seamless platform for users to search, explore, and connect with music on a deeper level.
+
+# General idea
+
+Experience the music revolution with EchoBeats, a trendsetting platform that fuels your passion for music, offering an immersive space to explore new vibes, unlock hidden gems, and connect with the latest tracks that resonate with your style.
+
+# Who would use it
+
+EchoBeats is for music lovers of all ages and preferences seeking a platform to explore, connect, and immerse themselves in the world of melodies and music.
+
 # ERD
 
+![Teal and White Gradient Tech and Gaming Retail Website (1)](https://github.com/DoloresCode/Portfolio_Website/assets/117631390/f61a1c1d-25c9-44a5-816b-a682b0375705)
 
 # Wireframes
 
+![EchoBeats-Welcome-Page](https://github.com/DoloresCode/Portfolio_Website/assets/117631390/b3da0dc3-a6c4-419d-ada9-0bd95bb363b7)
+
+![Music-Page](https://github.com/DoloresCode/Portfolio_Website/assets/117631390/221e4f67-d105-45df-bb0f-1eee4b5a25d6)
 
 # Logos 
+
+![Black White Modern Handwritten Square Studio Logo (1)](https://github.com/DoloresCode/Portfolio_Website/assets/117631390/76040ed5-01e2-4d02-93e1-f5aa7aff06d0)
+
+![Black White Modern Handwritten Square Studio Logo (2)](https://github.com/DoloresCode/Portfolio_Website/assets/117631390/23247625-1de0-47e6-8fa1-058e82f8e2c6)

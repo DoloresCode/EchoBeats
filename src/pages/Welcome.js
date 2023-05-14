@@ -8,7 +8,7 @@ function Welcome() {
       <div className="left-section">
         <h1 className="echo-beats-title">EchoBeats</h1>
         <p className="description">
-          Discover, connect, and let the music take you higher. Welcome to EchoBeats, where melodies come alive.
+          Discover, connect, and let the music take you higher.Welcome to EchoBeats, where melodies come alive.
         </p>
         <button className="see-more-button">See More</button>
       </div>

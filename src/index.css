@@ -173,3 +173,51 @@ body {
 .see-more-button:hover {
   background-color: #008D97;
 }
+
+/* About Page */
+
+
+
+
+
+
+/* NotFoundPage */
+
+.container {
+  background-color: #127178;
+  opacity: 0.8;
+  background-image: radial-gradient(circle at center center, #010103, #127178), repeating-radial-gradient(circle at center center, #010103, #010103, 10px, transparent 20px, transparent 10px);
+  background-blend-mode: multiply;
+}
+
+h1 {
+  color: #ffffff;
+}
+
+p {
+  color: #ffffff;
+}
+
+.fun-text {
+  display: block;
+  color: #ffffff;
+  font-size: 1.2em;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 20px;
+  background-color: #ffffff;
+  color: #127178;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background-color: #127178;
+  color: #ffffff;
+}

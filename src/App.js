@@ -8,8 +8,8 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Music from "./pages/Music";
 import MusicDetails from "./pages/MusicDetails";
-import Register from "./pages/Register";
-import Signin from "./pages/Signin";
+import Login from "./pages/users/Login";
+import Signup from "./pages/users/Signup";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
@@ -25,8 +25,8 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/music" element={<Music />} />
         <Route path="/music/:id" element={<MusicDetails />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/signin" element={<Signin />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
       </Routes>
 
       <Footer />

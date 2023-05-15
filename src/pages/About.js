@@ -2,12 +2,14 @@ function About() {
   return (
     <div className="about-container">
       <h2>About EchoBeats</h2>
-      <p>
-        EchoBeats is a revolutionary music player app designed to provide an
-        immersive music listening experience. With a vast library of songs
-        spanning various genres, EchoBeats allows users to discover, connect,
-        and explore the world of music like never before.
-      </p>
+      <div className="p-about-container">
+        <p>
+          EchoBeats is a revolutionary music player app designed to provide an
+          immersive music listening experience. With a vast library of songs
+          spanning various genres, EchoBeats allows users to discover, connect,
+          and explore the world of music like never before.
+        </p>
+      </div>
       <h3>Advantages of EchoBeats</h3>
       <ul>
         <li>Seamless integration with a powerful music streaming API</li>
@@ -29,22 +31,31 @@ function About() {
         to create an innovative music player app that brings the joy of music to
         users worldwide.
       </p>
+      <div className="info-container">
+      <div className="linkedin-container">
       <a
         href="https://www.linkedin.com/in/dolores-crazover/"
         className="linkedin-link"
         target="_blank"
         rel="noopener noreferrer"
       >
-        <img src="Dolores_Crazover_picture.png" alt="Dolores Crazover" />
+        <img
+          src="../Pictures/Dolores_Crazover_picture.png"
+          alt="Dolores Crazover"
+        />
       </a>
-      <a
-        href="https://github.com/DoloresCode"
-        className="github-btn"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        GitHub
-      </a>
+      </div>
+      <div className="github-container">
+        <a
+          href="https://github.com/DoloresCode"
+          className="github-btn"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub
+        </a>
+      </div>
+    </div>
     </div>
   )
 }

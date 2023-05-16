@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Route, Routes } from "react-router-dom";
+import Welcome from "./pages/Welcome";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Music from "./pages/Music";
@@ -8,6 +9,7 @@ import Login from "./pages/users/Login";
 import Signup from "./pages/users/Signup";
 import Contact from "./pages/Contact";
 import Header from "./components/Header";
+import WelcomeHeader from "./components/WelcomeHeader";
 import Footer from "./components/Footer";
 
 function App() {
@@ -22,8 +24,9 @@ function App() {
       <Header />
 
       <Routes>
-      <Route path="/" element={currentForm === "login" ? <Login onFormSwitch={toggleForm} /> : <Signup onFormSwitch={toggleForm} />} />
-        <Route path="/" element={<Home />} />
+      {/* <Route path="/welcome" element={currentForm === "login" ? <Login onFormSwitch={toggleForm} /> : <Signup onFormSwitch={toggleForm} />} /> */}
+      <Route path="/welcome" element={<Welcome />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/music" element={<Music />} />
         <Route path="/music/:id" element={<MusicDetails />} />

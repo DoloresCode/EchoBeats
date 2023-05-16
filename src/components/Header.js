@@ -5,14 +5,14 @@ function Header() {
     return (
       <header className="header">
         <div className="logo-container">
-          <Link to="/">
+          <Link to="/home">
             <img src={logo} alt="logo" className="logo" />
           </Link>
         </div>
         <nav className="navbar">
           <ul className="nav-list">
             <li>
-              <Link to="/">
+              <Link to="/home">
                 <div>Home</div>
               </Link>
             </li>
@@ -33,7 +33,7 @@ function Header() {
             </li>
             <li>
               <Link to="/login">
-                <div>Login</div>
+                <div>Log In</div>
               </Link>
             </li>
             <li>

@@ -1,9 +1,9 @@
 import React from 'react';
 import welcomePicture from '../Pictures/Welcomepage_picture.png';
 
-function Home() {
+function Welcome() {
   return (
-    <div className="home-container">
+    <div className="welcome-container">
       <div className="background-image"></div>
       <div className="left-section">
         <h1 className="echo-beats-title">EchoBeats</h1>
@@ -19,4 +19,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Welcome;

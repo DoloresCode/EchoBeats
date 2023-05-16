@@ -1,7 +1,9 @@
-// import logo from './logo.svg';
-// import './App.css';
+import logo from './logo.svg';
+import './App.css';
 
 // import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+
 import { Route, Routes } from "react-router-dom";
 import Welcome from "./pages/Welcome";
 import Home from "./pages/Home";
@@ -15,11 +17,24 @@ import Footer from "./components/Footer";
 
 
 function App() {
+  const [currentForm, setCurrentForm] = useState('login');
+
+const toggleForm = (formName) => {
+  setCurrentForm(formName);
+}
+
+
   return (
     <div>
       <Header />
 
       <Routes>
+        <div className="App">
+{
+  currentForm === "login" ? <Login onFormSwitch={toggleForm}/> : <Signup onFormSwitch={toggleForm}/>
+}
+
+        </div>
         <Route path="/" element={<Welcome />} />
         <Route path="/home" element={<Home />} />
         <Route path="/about" element={<About />} />

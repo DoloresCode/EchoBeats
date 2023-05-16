@@ -310,3 +310,138 @@ p {
 }
 
 /* Sign Up Page */
+
+.signup-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: #f7f7f7;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.signup-container h2 {
+  text-align: center;
+  color: #127178;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #127178;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #0d5260;
+}
+
+.login-link-container {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.login-link-container p {
+  font-size: 14px;
+  color: black;
+}
+
+.login-link-container a {
+  color: #127178;
+  text-decoration: none;
+}
+
+.login-link-container a:hover {
+  text-decoration: underline;
+}
+
+/* Login Page */
+
+.login-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: #f7f7f7;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.login-container h2 {
+  text-align: center;
+  color: #127178;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-group input[type="email"],
+.form-group input[type="password"] {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #127178;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #0d5260;
+}
+
+.signup-link-container {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.signup-link-container p {
+  font-size: 14px;
+  color: black;
+}
+
+.signup-link-container a {
+  color: #127178;
+  text-decoration: none;
+}
+
+.signup-link-container a:hover {
+  text-decoration: underline;
+}

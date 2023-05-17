@@ -142,10 +142,11 @@ function Music() {
   // When I click "Get Albums" or "Get Playlists", the app makes a GET request to the Spotify API with the access token in the Authorization header. The access token lets Spotify know that my app is authorized to access the user's Spotify data. The API responds with the user's saved albums or playlists (mine), respectively, and these are set in the component's state and displayed in the app (EchoBeats).
   return (
     <>
-      {/* <form onSubmit={searchArtists}>
+      {/* Search form */}
+      <form onSubmit={searchArtists}>
         <input type="text" onChange={(e) => setSearchKey(e.target.value)} />
         <button type={"submit"}>Search</button>
-      </form> */}
+      </form>
 
       <button onClick={handleAlbums}>Get Albums</button>
       {renderArtists()}

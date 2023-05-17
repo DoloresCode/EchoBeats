@@ -1,23 +1,24 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import Welcome from "./pages/Welcome";
 import Home from "./pages/Home";
 import About from "./pages/About";
-import Music from "./pages/Music";
-import MusicDetails from "./pages/MusicDetails";
+import Music from "./pages/MusicApp/components-music/Music";
+import MusicDetails from "./pages/MusicApp/components-music/MusicDetails";
 import Login from "./pages/users/Login";
 import Signup from "./pages/users/Signup";
 import Contact from "./pages/Contact";
 import Header from "./components/Header";
-import WelcomeHeader from "./components/WelcomeHeader";
+// import WelcomeHeader from "./components/WelcomeHeader";
 import Footer from "./components/Footer";
 
 function App() {
-  const [currentForm, setCurrentForm] = useState("login");
+  // const [currentForm, setCurrentForm] = useState("login");
 
-  const toggleForm = (formName) => {
-    setCurrentForm(formName);
-  };
+  // const toggleForm = (formName) => {
+  //   setCurrentForm(formName);
+  // };
+
 
   return (
     <div>

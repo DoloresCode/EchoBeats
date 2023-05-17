@@ -4,7 +4,7 @@ import axios from "axios"
 const PLAYLISTS_ENDP = "https://api.spotify.com/v1/me/playlists"
 const ALBUMS_ENDP = "https://api.spotify.com/v1/me/albums"
 const CLIENT_ID = "ee90770ebf6844819ca262204dcb0810" // insert your client id here from spotify
-const CLIENT_SECRET = "1c7a7e72228a4e2fb30a1b99d7d600aa"
+
 const SPOTIFY_AUTHORIZE_ENDPOINT = "https://accounts.spotify.com/authorize"
 const REDIRECT_URL_AFTER_LOGIN = "http://localhost:3000/music"
 const SPACE_DELIMITER = "%20"

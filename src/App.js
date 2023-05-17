@@ -26,7 +26,7 @@ function App() {
 
       <Routes>
       {/* <Route path="/welcome" element={currentForm === "login" ? <Login onFormSwitch={toggleForm} /> : <Signup onFormSwitch={toggleForm} />} /> */}
-      <Route path="/welcome" element={<Welcome />} />
+      <Route path="/" element={<Welcome />} />
         <Route path="/home" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/music" element={<Music />} />

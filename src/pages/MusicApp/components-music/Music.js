@@ -149,38 +149,43 @@ function Music() {
         <button type={"submit"}>Search</button>
       </form>
 
-{/* {/* FOR ALBUM */} 
-      <button onClick={handleAlbums}>Get Albums</button>
-      <div>{renderArtists()}</div>
+      {/* {/* FOR ALBUM */}
+      <div className="album-button-container">
+        <button onClick={handleAlbums}>Get Albums</button>
+      </div>
+      {/* Artist rendering */}
+      <div className="artists-container">{renderArtists()}</div>
       <div className="card-grid">
-      {spfyAlbumData?.items
-        ? spfyAlbumData.items.map((album, index) => (
-            <div key={index}>
-              <img src={album.album.images[0]?.url} alt="Album cover" />{" "}
-              {/* Display album image */}
-              <button onClick={() => play(album.album.id, "album")}>
-                {album.album.name} {album.album.release_date}
-              </button>
-            </div>
-          ))
-        : null}
-        </div>
+        {spfyAlbumData?.items
+          ? spfyAlbumData.items.map((album, index) => (
+              <div key={index}>
+                <img src={album.album.images[0]?.url} alt="Album cover" />{" "}
+                {/* Display album image */}
+                <button onClick={() => play(album.album.id, "album")}>
+                  {album.album.name} {album.album.release_date}
+                </button>
+              </div>
+            ))
+          : null}
+      </div>
 
-{/* {/* FOR PLAYLISTS */} 
-      <button onClick={handlePlaylists}>Get Playlists</button>
+      {/* {/* FOR PLAYLISTS */}
+      <div className="playlist-button-container">
+        <button onClick={handlePlaylists}>Get Playlists</button>
+      </div>
       <div className="card-grid">
-      {spfyPlaylistData?.items
-        ? spfyPlaylistData.items.map((playlist, index) => (
-            <div key={index}>
-              <img src={playlist.images[0]?.url} alt="Playlist cover" />{" "}
-              {/* Display playlist image */}
-              <button onClick={() => play(playlist.id, "playlist")}>
-                {playlist.name}
-              </button>
-            </div>
-          ))
-        : null}
-        </div>
+        {spfyPlaylistData?.items
+          ? spfyPlaylistData.items.map((playlist, index) => (
+              <div key={index}>
+                <img src={playlist.images[0]?.url} alt="Playlist cover" />{" "}
+                {/* Display playlist image */}
+                <button onClick={() => play(playlist.id, "playlist")}>
+                  {playlist.name}
+                </button>
+              </div>
+            ))
+          : null}
+      </div>
     </>
   )
 }

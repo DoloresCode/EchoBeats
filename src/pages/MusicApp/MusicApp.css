@@ -8,16 +8,18 @@ body {
 button {
     padding: 10px;
     margin: 5px;
-    background-color: #00C4CC; /* Your original color */
+    background-color: black; 
     color: white;
-    border: none;
+    /* border: none; */
+    border: 1px solid #323232;
     border-radius: 2px;
     cursor: pointer;
     font-size: 14px;
+    box-shadow: 0px 4px 8px 0px rgba(255,255,255,0.2);
 }
 
 button:hover {
-    background-color: #034547;; /* A slightly darker shade for hover */
+    background-color: #034547;; 
 }
 
 form {
@@ -39,10 +41,12 @@ input[type='text'] {
 }
 
 .card-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
+    display: grid; /* use CSS grid layout*/
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); /* defines the number and width of the columns in a grid layout - the auto-fill part: tells the browser to automatically create as many columns as will fit in the container and each of these columns should have a minimum width of 400px and a maximum width of 1fr | 1fr represents one part of the available space in the grid container - */
+    gap: 20px; /* fixed gap between the grid items - I wanted to create a flexible and responsive grid*/
+    justify-items: center;
+    margin-bottom: 20px;
+  }
 
 .card-grid div {
     flex-basis: calc(33.3333% - 20px);
@@ -50,9 +54,10 @@ input[type='text'] {
     flex-direction: column;
     align-items: center;
     margin: 10px;
-    padding: 10px;
+    padding: 20px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.2);
-    background-color: white;
+    /* background-color: white; /* finally no*/
+    border: 1px solid #ddd;
     border-radius: 5px;
 }
 
@@ -62,3 +67,48 @@ img {
     object-fit: cover;
     border-radius: 2px;
 }
+
+/*ARTISTS Cards display when search */
+
+.artists-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    color: white;
+  }
+
+  .artists-container div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    width: 200px;
+    
+  }
+
+  .artists-container div img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+
+  .artists-container div p {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .album-button-container,
+.playlist-button-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  margin-bottom: 20px;
+  width: 100%;
+}
+

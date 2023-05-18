@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import axios from "axios"
-import '../MusicApp.css';
+import "../MusicApp.css"
 
 // Constants for API endpoints and Spotify authorization - Help get API Key
 // https://developer.spotify.com/documentation/web-api/reference/get-users-saved-albums
@@ -149,8 +149,10 @@ function Music() {
         <button type={"submit"}>Search</button>
       </form>
 
+{/* {/* FOR ALBUM */} 
       <button onClick={handleAlbums}>Get Albums</button>
-      {renderArtists()}
+      <div>{renderArtists()}</div>
+      <div className="card-grid">
       {spfyAlbumData?.items
         ? spfyAlbumData.items.map((album, index) => (
             <div key={index}>
@@ -162,7 +164,11 @@ function Music() {
             </div>
           ))
         : null}
+        </div>
+
+{/* {/* FOR PLAYLISTS */} 
       <button onClick={handlePlaylists}>Get Playlists</button>
+      <div className="card-grid">
       {spfyPlaylistData?.items
         ? spfyPlaylistData.items.map((playlist, index) => (
             <div key={index}>
@@ -174,6 +180,7 @@ function Music() {
             </div>
           ))
         : null}
+        </div>
     </>
   )
 }

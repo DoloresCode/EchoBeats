@@ -5,47 +5,60 @@ body {
     font-family: Arial, sans-serif;
   }
   
-  button {
+button {
     padding: 10px;
     margin: 5px;
-    background-color: #00C4CC; /* Spotify Green */
+    background-color: #00C4CC; /* Your original color */
     color: white;
     border: none;
     border-radius: 2px;
     cursor: pointer;
     font-size: 14px;
-  }
-  
-  button:hover {
-    background-color: #034547; /* Lighter Spotify Green */
-  }
-  
-  form {
+}
+
+button:hover {
+    background-color: #034547;; /* A slightly darker shade for hover */
+}
+
+form {
     display: flex;
+    align-items: flex-start; /* flex-start is set with justify-content, it aligns the items at the start of the main axis */
     justify-content: center;
     margin-bottom: 20px;
     width: 100%;
-  }
-  
-.input[type='text'] {
-    flex-grow: 1;
+}
+
+input[type='text'] {
+    width: 30%; /* I changed flex-grow, flex-start aand the width to 30% to reduce the size of the search bar as before it was not working*/
+    flex-grow: 0; /* changed from 1 to 0 so the element won't grow beyond its original size even if there is extra space available in the flex container. as at 1 every child will set to an equal size inside the container*/
     padding: 10px;
     margin-right: 10px;
     border-radius: 5px;
     border: 2px solid #3E3E3E;
     font-size: 14px;
-  }
-  
-  div {
+}
+
+.card-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card-grid div {
+    flex-basis: calc(33.3333% - 20px);
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  img {
-    width: 200px;
-    height: 200px;
+    margin: 10px;
+    padding: 10px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    background-color: white;
+    border-radius: 5px;
+}
+
+img {
+    width: 100%;
+    height: 300px;
     object-fit: cover;
     border-radius: 2px;
-  }
+}

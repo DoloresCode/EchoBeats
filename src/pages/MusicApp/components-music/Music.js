@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import axios from "axios"
+import '../MusicApp.css';
 
 // Constants for API endpoints and Spotify authorization - Help get API Key
 // https://developer.spotify.com/documentation/web-api/reference/get-users-saved-albums

@@ -66,13 +66,32 @@ body {
   color: #17a0a7;
 }
 
+.navbar { 
+  position: relative;
+  z-index: 2; /* the navbar in front*/
+}
 
 /* WelcomeHeader */
 
+.nav-button {
+  background-color: #00C4CC;
+  color: white;
+  font-weight: bold;
+  font-size: 25px;
+  border: none;
+  border-radius: 20px;
+  padding: 5px 40px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: 5%;
+  width: 100%; 
+}
 
+.nav-button:hover {
+  background-color: #008D97;
+}
 
 /* Footer */
-
 
 .copyright {
   text-align: center;
@@ -146,10 +165,12 @@ body {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  position: relative;
+  z-index: 1; /*set the image behind*/
 }
 
 .right-section .image {
-  max-width: 50%;
+  max-width: 60%;
   height: auto;
   margin-top: -45%;
   margin-right: -5rem;

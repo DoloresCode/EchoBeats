@@ -1,16 +1,16 @@
 // import React, { useState } from "react";
-import { Route, Routes } from "react-router-dom";
-import Welcome from "./pages/Welcome";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Music from "./pages/MusicApp/components-music/Music";
-import MusicDetails from "./pages/MusicApp/components-music/MusicDetails";
-import Login from "./pages/users/Login";
-import Signup from "./pages/users/Signup";
-import Contact from "./pages/Contact";
-import Header from "./components/Header";
-// import WelcomeHeader from "./components/WelcomeHeader";
-import Footer from "./components/Footer";
+import { Route, Routes, useLocation } from "react-router-dom"
+import Welcome from "./pages/Welcome"
+import Home from "./pages/Home"
+import About from "./pages/About"
+import Music from "./pages/MusicApp/components-music/Music"
+import MusicDetails from "./pages/MusicApp/components-music/MusicDetails"
+import Login from "./pages/users/Login"
+import Signup from "./pages/users/Signup"
+import Contact from "./pages/Contact"
+import Header from "./components/Header"
+import WelcomeHeader from "./components/WelcomeHeader";
+import Footer from "./components/Footer"
 
 function App() {
   // const [currentForm, setCurrentForm] = useState("login");
@@ -18,15 +18,15 @@ function App() {
   // const toggleForm = (formName) => {
   //   setCurrentForm(formName);
   // };
-
+  console.log(useLocation())
 
   return (
     <div>
-      <Header />
+      {useLocation().pathname === '/' ? <WelcomeHeader /> : <Header />}
 
       <Routes>
-      {/* <Route path="/welcome" element={currentForm === "login" ? <Login onFormSwitch={toggleForm} /> : <Signup onFormSwitch={toggleForm} />} /> */}
-      <Route path="/" element={<Welcome />} />
+        {/* <Route path="/welcome" element={currentForm === "login" ? <Login onFormSwitch={toggleForm} /> : <Signup onFormSwitch={toggleForm} />} /> */}
+        <Route path="/" element={<Welcome />} />
         <Route path="/home" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/music" element={<Music />} />
@@ -38,7 +38,7 @@ function App() {
 
       <Footer />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

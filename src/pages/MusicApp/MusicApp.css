@@ -22,7 +22,7 @@ button:hover {
     background-color: #034547;; 
 }
 
-form {
+.search-music-form {
     display: flex;
     align-items: flex-start; /* flex-start is set with justify-content, it aligns the items at the start of the main axis */
     justify-content: center;
@@ -30,7 +30,7 @@ form {
     width: 100%;
 }
 
-input[type='text'] {
+#search-field {
     width: 30%; /* I changed flex-grow, flex-start aand the width to 30% to reduce the size of the search bar as before it was not working*/
     flex-grow: 0; /* changed from 1 to 0 so the element won't grow beyond its original size even if there is extra space available in the flex container. as at 1 every child will set to an equal size inside the container*/
     padding: 10px;

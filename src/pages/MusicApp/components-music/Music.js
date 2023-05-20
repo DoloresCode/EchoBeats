@@ -38,6 +38,7 @@ function Music() {
     let token = window.localStorage.getItem("token")
     let expiresAt = window.localStorage.getItem("expiresAt")
 
+        
     //If the token is expired or not present in local storage, the hook retrieves it from the URL and sets it in local storage.
     if (!token || !expiresAt || expiresAt < new Date().getTime()) {
       /* I need to sign in to get an access token; that's the token I put in Bearer Authorization here */
@@ -144,8 +145,8 @@ function Music() {
   return (
     <>
       {/* Search form */}
-      <form onSubmit={searchArtists}>
-        <input type="text" onChange={(e) => setSearchKey(e.target.value)} />
+      <form className="search-music-form" onSubmit={searchArtists}>
+        <input type="text" onChange={(e) => setSearchKey(e.target.value)} id="search-field" />
         <button type={"submit"}>Search</button>
       </form>
 

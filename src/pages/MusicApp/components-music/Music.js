@@ -30,6 +30,7 @@ function Music() {
   const [spfyAlbumData, setSpfyAlbumData] = useState({})
   const [searchKey, setSearchKey] = useState("")
   const [artists, setArtists] = useState([])
+console.log(expiresAt)
 
   // useEffect hook for handling authorization and setting token - token and expiration duration are retrieve from URL hash fragment or local storage if they exist there.
   useEffect(() => {

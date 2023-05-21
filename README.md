@@ -14,9 +14,9 @@ If you wish to run the code locally run the following.
 
 
 - 1 - Install Dependencies: npm install
-- 1 - Set up Environment Variables: touch .env (for CLIENT_SECRET key if needed and client_ID)
-- 1 - npm start
-- 1 - visit http://localhost:3000
+- 2 - Set up Environment Variables: touch .env (for CLIENT_SECRET key if needed and client_ID)
+- 3 - npm start
+- 3 - visit http://localhost:3000
 
 - 1 - Create a Spotify Developer Account: Visit the Spotify Developer Dashboard (https://developer.spotify.com/dashboard/)
 - 2 - Create a new Spotify Application
@@ -43,9 +43,8 @@ Back-End Development:
 - 3 - As a user, I should have access to the app's features on the About page.
 - 4 - As a user, you should be able to search for songs, albums, artists, and playlists.
 - 5 - As a user, you should be able to explore an extensive library of songs across various genres, including the latest hits and timeless classics.
-- 7 - As a user, you should be able to view detailed information about the albums and playlists, such as the title, artist names, album cover images.
-<!-- - 8 - As a user, you should be able to create personalized playlists to organize your favorite tracks based on moods, occasions, or genres. -->
-- 10 - As a user, you should be able to navigate through the app effortlessly with a sleek and user-friendly interface that enhances your overall music inspiration and exploration experience.
+- 6 - As a user, you should be able to view detailed information about the albums and playlists, such as the title, artist names, album cover images.
+- 7 - As a user, you should be able to navigate through the app effortlessly with a sleek and user-friendly interface that enhances your overall music inspiration and exploration experience.
 
 # Problem that EchoBeats solves
 

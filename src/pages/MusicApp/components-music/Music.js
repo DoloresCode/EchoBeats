@@ -6,11 +6,12 @@ import "../MusicApp.css"
 // https://developer.spotify.com/documentation/web-api/reference/get-users-saved-albums
 const PLAYLISTS_ENDP = "https://api.spotify.com/v1/me/playlists"
 const ALBUMS_ENDP = "https://api.spotify.com/v1/me/albums"
-const CLIENT_ID = "ee90770ebf6844819ca262204dcb0810"
+const CLIENT_ID = process.env.REACT_APP_CLIENT_ID;
 const SPOTIFY_AUTHORIZE_ENDPOINT = "https://accounts.spotify.com/authorize"
 const REDIRECT_URL_AFTER_LOGIN = "http://localhost:3000/music"
 const SPACE_DELIMITER = "%20"
-
+const words = ['Discover', 'Experience', 'Transform']; 
+console.log(CLIENT_ID)
 // Scopes for Spotify authorization - access to my Music library,
 const SCOPES = [
   "user-library-read",
@@ -31,6 +32,16 @@ function Music() {
   const [searchKey, setSearchKey] = useState("")
   const [artists, setArtists] = useState([])
 console.log(expiresAt)
+
+ // Function to clear the fetched playlists
+ const resetPlaylists = () => {
+    setSpfyPlaylistData({});
+  }
+
+// Function to clear the fetched albums
+  const resetAlbums = () => {
+    setSpfyAlbumData({});
+  }
 
   // useEffect hook for handling authorization and setting token - token and expiration duration are retrieve from URL hash fragment or local storage if they exist there.
   useEffect(() => {
@@ -141,10 +152,35 @@ console.log(expiresAt)
     ))
   }
 
+  const [activeWord, setActiveWord] = useState('Discover');
+
+  // incrementation of the index by 1 making it equal to the lengh of words so it reset it to 0.
+  useEffect(() => {
+    let index = 0;
+    
+    const intervalId = setInterval(() => {
+      index = index + 1 === words.length ? 0 : index + 1;
+      setActiveWord(words[index]); // updates the value of activeWord to the word at the current index of the words array
+    }, 2000); // Change every 2 seconds
+    
+    // Cleanup function to clear the interval when the component unmounts
+    return () => clearInterval(intervalId);
+  }, []); // Empty dependency array to ensure this runs once on mount and not on every update
+
+
   // All the component is render here
   // When I click "Get Albums" or "Get Playlists", the app makes a GET request to the Spotify API with the access token in the Authorization header. The access token lets Spotify know that my app is authorized to access the user's Spotify data. The API responds with the user's saved albums or playlists (mine), respectively, and these are set in the component's state and displayed in the app (EchoBeats).
   return (
     <>
+
+  <h1 style={{ color: "white", fontWeight: "bold", fontSize: "30px", marginLeft: 
+    '5%', paddingBottom: "20px", width: "60%"}}>
+        Dive into our expansive library of albums and playlists. Allow the diverse power of artists from around the globe to ignite your inspiration. 
+        <br />
+        <br />
+        Your journey through music starts here.<span style={{ color: activeWord === 'Discover' ? '#00C4CC' : activeWord === 'Experience' ? '#BF2026' : activeWord === 'Transform' ? 'purple' : '#BF2026', fontSize: "40px" }}> {activeWord}</span>.
+      </h1>
+
       {/* Search form */}
       <form className="search-music-form" onSubmit={searchArtists}>
         <input type="text" onChange={(e) => setSearchKey(e.target.value)} id="search-field" />
@@ -154,6 +190,7 @@ console.log(expiresAt)
       {/* {/* FOR ALBUM */}
       <div className="album-button-container">
         <button onClick={handleAlbums}>Get Albums</button>
+        <button onClick={resetAlbums}>Reset Albums</button> 
       </div>
       {/* Artist rendering */}
       <div className="artists-container">{renderArtists()}</div>
@@ -174,6 +211,7 @@ console.log(expiresAt)
       {/* {/* FOR PLAYLISTS */}
       <div className="playlist-button-container">
         <button onClick={handlePlaylists}>Get Playlists</button>
+        <button onClick={resetPlaylists}>Reset Playlists</button>
       </div>
       <div className="card-grid">
         {spfyPlaylistData?.items

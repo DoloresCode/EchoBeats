@@ -28,7 +28,7 @@ function WelcomeHeader() {
             </Link>
           </li>
           <li>
-          <Link to="/signin" className="nav-link">
+          <Link to="/signup" className="nav-link">
               <button className="nav-button">Sign In</button>
             </Link>
           </li>

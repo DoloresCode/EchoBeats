@@ -434,9 +434,9 @@ p {
 .form-group input[type="email"],
 .form-group input[type="password"] {
   width: 100%;
-  padding: 8px;
+  padding: 12px;
   border: 1px solid #ccc;
-  border-radius: 3px;
+  border-radius: 5px;
 }
 
 .btn {
@@ -470,4 +470,76 @@ p {
 
 .signup-link-container a:hover {
   text-decoration: underline;
+}
+
+/* Contact Page */
+
+.contact-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: #f7f7f7;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.contact-container h2 {
+  text-align: center;
+  color: #127178;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #127178;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #0d5260;
+}
+
+.contact-info {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.contact-info p {
+  color: #555555;
+  font-size: 14px;
+}
+
+@media screen and (max-width: 576px) {
+  .contact-container {
+    max-width: 100%;
+    padding: 20px;
+  }
 }

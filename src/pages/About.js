@@ -1,3 +1,6 @@
+import imageAbout from '../Pictures/Dolores_Crazover_picture.png'
+
+
 function About() {
   return (
     <div className="about-container">
@@ -12,50 +15,53 @@ function About() {
       </div>
       <h3>Advantages of EchoBeats</h3>
       <ul>
-        <li>Seamless integration with a powerful music streaming API</li>
+        <li>Seamless integration with a powerful music library API </li>
         <li>Intuitive user interface for effortless music exploration</li>
         <li>
           Advanced search functionality for finding songs, albums, artists, and
           playlists
         </li>
         <li>
-          High-quality audio streaming for an enhanced listening experience
+          Broad music catalog featuring a diverse range of genres and artists
+          from around the world
         </li>
         <li>Personalized playlists to curate your own music collection</li>
       </ul>
       <h3>About the Developer</h3>
       <p>
         EchoBeats was developed by Dolores Crazover, a talented full-stack
-        developer with expertise in front-end development and API integration.
-        With a passion for music and technology, Dolores combined their skills
-        to create an innovative music player app that brings the joy of music to
-        users worldwide.
+        developer with expertise in frontend development and API integration.
+        With a passion for music and technology, Dolores combined her skills to
+        create an innovative music player app that brings the joy of music
+        inspiration to users worldwide.
       </p>
       <div className="info-container">
-      <div className="linkedin-container">
-      <a
-        href="https://www.linkedin.com/in/dolores-crazover/"
-        className="linkedin-link"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <img
-          src="../Pictures/Dolores_Crazover_picture.png"
-          alt="Dolores Crazover"
-        />
-      </a>
+        <div className="linkedin-container">
+          <a
+            href="https://www.linkedin.com/in/dolores-crazover/"
+            className="linkedin-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div className="image-wrapper">
+            <img
+              src={imageAbout}
+              alt="DoloresCrazover"
+            />
+            </div>
+          </a>
+        </div>
+        <div className="github-container">
+          <a
+            href="https://github.com/DoloresCode"
+            className="github-btn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+          </a>
+        </div>
       </div>
-      <div className="github-container">
-        <a
-          href="https://github.com/DoloresCode"
-          className="github-btn"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          GitHub
-        </a>
-      </div>
-    </div>
     </div>
   )
 }

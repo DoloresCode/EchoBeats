@@ -1,19 +1,42 @@
-import React, { useState } from "react"
-import { Link } from "react-router-dom"
+import '../../index.css';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import axios from "axios";
 
-export function Login(props) {
-  const [email, setEmail] = useState("") // initial value empthy that will be updated
-  const [password, setPassword] = useState("")
 
-  const handleLogin = (e) => {
-    e.preventDefault();
-    console.log(email);
-    // login logic here
+const Login = (props) => {
+  const initialState = { email: "", password: "" }
+  const [input, setInput] = useState(initialState)
+  const [error, setError] = useState("")
 
-    // Reset form inputs
-    setEmail("")
-    setPassword("")
+  const handleChange = async (e) => {
+    setInput({ ...input, [e.target.name]: e.target.value })
   }
+
+
+  //   // Reset form inputs
+  //   setEmail("")
+  //   setPassword("")
+  // }
+// export default Login
+
+
+
+const handleLogin = async (e) => {
+  e.preventDefault()
+  try {
+    const url = "https://localhost:4000/api/auth";
+    const res = await axios.post(url, input); // Post request to the API
+    localStorage.setItem("token", res.data);
+    window.location = "/";
+  } catch (error) {
+      if (error.response && error.response.status >= 400 && error.response.status <= 500) {
+          setError(error.response.data.message); 
+        } else {
+      setError(error.response.data.message)
+    }
+  }
+}
 
   return (
     
@@ -27,8 +50,8 @@ export function Login(props) {
               type="email"
               placeholder="youremail@gmail.com"
               id="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              value={input.email}
+              onChange={handleChange}
               required
             />
           </div>
@@ -38,11 +61,12 @@ export function Login(props) {
               type="password"
               placeholder="*********"
               id="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              value={input.password}
+              onChange={handleChange}
               required
             />
           </div>
+          {error && <div className="error-msg">{error}</div>}
           <button type="submit" className="btn btn-primary">
             Log In
           </button>
@@ -56,4 +80,4 @@ export function Login(props) {
   )
 }
 
-export default Login
+export default Login;

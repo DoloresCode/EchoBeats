@@ -1,7 +1,9 @@
-import React, { useState } from "react"
-import { Link, useNavigate } from "react-router-dom"
-import axios from "axios"
+import '../../index.css';
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 
+// ATTENTION remove signUP below aas it is not used
 const Signup = ({ signUp, onFormSwitch }) => {
   const initialState = { firstName: "", lastName: "", email: "", password: "" }
   const [input, setInput] = useState(initialState)
@@ -29,7 +31,7 @@ const Signup = ({ signUp, onFormSwitch }) => {
   const handleSignup = async (e) => {
     e.preventDefault()
     try {
-      const url = "https://localhost:4000/api/users"
+      const url = "https://localhost:4000/api/users";
       const { data: res } = await axios.post(url, input)
       navigate("/login")
       console.log(res.message)
@@ -107,4 +109,4 @@ const Signup = ({ signUp, onFormSwitch }) => {
   )
 }
 
-export default Signup
+export default Signup;

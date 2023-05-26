@@ -1,10 +1,24 @@
-# About EchoBeats
+# EchoBeats
+
+# Project Description
 
 EchoBeats: Inspiring Global Music Exploration. Discover, search, and get inspired by a curated selection of playlists and albums from around the world. Embark on a musical journey like no other, exploring diverse genres and uncovering hidden gems, from the latest chart-toppers to timeless classics. EchoBeats is your platform to connect with the pulse of global music and unleash your own creative potential. With powerful search functionality, and an effortless navigation exploration of the albums and playlists libraries, EchoBeats allows you to get inspired. Experience EchoBeats today and let the beats echo through your soul. Download now and let the melodies come alive.
 
 # Deployed App
 
-https://echobeats.netlify.app/
+[https://echobeats.netlify.app/] (link)
+
+# Wireframes
+
+![EchoBeats-Welcome-Page](https://github.com/DoloresCode/Portfolio_Website/assets/117631390/b3da0dc3-a6c4-419d-ada9-0bd95bb363b7)
+
+![Music-Page](https://github.com/DoloresCode/Portfolio_Website/assets/117631390/221e4f67-d105-45df-bb0f-1eee4b5a25d6)
+
+# Logos 
+
+![Black White Modern Handwritten Square Studio Logo (1)](https://github.com/DoloresCode/Portfolio_Website/assets/117631390/76040ed5-01e2-4d02-93e1-f5aa7aff06d0)
+
+![Black White Modern Handwritten Square Studio Logo (2)](https://github.com/DoloresCode/Portfolio_Website/assets/117631390/23247625-1de0-47e6-8fa1-058e82f8e2c6)
 
 # Getting Started
 
@@ -22,8 +36,6 @@ If you wish to run the code locally run the following.
 - 2 - Create a new Spotify Application
 
 
-
-
 # Technologies
 
 Front-End Development:
@@ -35,6 +47,14 @@ Front-End Development:
 Back-End Development:
 * Node.js
 * Express.js
+* JWT
+
+# Future updates 
+
+- [ ] implementing Spotify playback // This is pending
+- [ ] implementing the contact form // This is pending
+- [ ] implementing a user profile // This is pending
+
 
 # User Flow
 
@@ -62,14 +82,3 @@ EchoBeats is for music lovers of all ages and preferences seeking a platform to 
 
 ![Teal and White Gradient Tech and Gaming Retail Website (1)](https://github.com/DoloresCode/Portfolio_Website/assets/117631390/f61a1c1d-25c9-44a5-816b-a682b0375705)
 
-# Wireframes
-
-![EchoBeats-Welcome-Page](https://github.com/DoloresCode/Portfolio_Website/assets/117631390/b3da0dc3-a6c4-419d-ada9-0bd95bb363b7)
-
-![Music-Page](https://github.com/DoloresCode/Portfolio_Website/assets/117631390/221e4f67-d105-45df-bb0f-1eee4b5a25d6)
-
-# Logos 
-
-![Black White Modern Handwritten Square Studio Logo (1)](https://github.com/DoloresCode/Portfolio_Website/assets/117631390/76040ed5-01e2-4d02-93e1-f5aa7aff06d0)
-
-![Black White Modern Handwritten Square Studio Logo (2)](https://github.com/DoloresCode/Portfolio_Website/assets/117631390/23247625-1de0-47e6-8fa1-058e82f8e2c6)

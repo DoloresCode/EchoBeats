@@ -34,7 +34,7 @@ function WelcomeHeader() {
           </li>
           <li>
             <Link to="/login" className="nav-link">
-              <button className="nav-button">Log In</button>
+              <button className="nav-button">Login</button>
             </Link>
           </li>
         </ul>

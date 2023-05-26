@@ -1,7 +1,9 @@
+// Import necessary libraries and components
 import '../../index.css';
-import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import axios from "axios";
+import React, { useState } from "react"; // State hooks from React
+import { Link, useNavigate } from "react-router-dom"; // Component for handling internal routing
+import axios from "axios"; // Library for HTTP requests
+
 
 // ATTENTION remove signUP below aas it is not used
 const Signup = ({ signUp, onFormSwitch }) => {

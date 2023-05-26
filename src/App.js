@@ -13,21 +13,23 @@ import WelcomeHeader from "./components/WelcomeHeader";
 import Footer from "./components/Footer"
 
 function App() {
+
   // const [currentForm, setCurrentForm] = useState("login");
 
   // const toggleForm = (formName) => {
   //   setCurrentForm(formName);
   // };
   console.log(useLocation())
-
+  const user = localStorage.getItem("token")
   return (
     <div>
+     {/* check if the current URL path is equal to '/', if it is render the <WelcomeHeader /> component and if not render the <Header /> component. */}
       {useLocation().pathname === '/' ? <WelcomeHeader /> : <Header />}
 
       <Routes>
         {/* <Route path="/welcome" element={currentForm === "login" ? <Login onFormSwitch={toggleForm} /> : <Signup onFormSwitch={toggleForm} />} /> */}
         <Route path="/" element={<Welcome />} />
-        <Route path="/home" element={<Home />} />
+        {user && <Route path="/home" element={<Home />} />}
         <Route path="/about" element={<About />} />
         <Route path="/music" element={<Music />} />
         <Route path="/music/:id" element={<MusicDetails />} />

@@ -1,7 +1,14 @@
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom";
+import '.././index.css';
 import logo from "../Pictures/Logo_echobeats_black.png"
 
 function Header() {
+  const navigate = useNavigate();
+
+ const handleLogout = () => {
+      localStorage.removeItem("token");
+      navigate("/login");
+    }
     return (
       <header className="header">
         <div className="logo-container">
@@ -27,14 +34,14 @@ function Header() {
               </Link>
             </li>
             <li>
-              <Link to="/signup">
-                <div>Sign Up</div>
+              <Link to="/login">
+                <div>Login</div>
               </Link>
             </li>
             <li>
-              <Link to="/login">
-                <div>Log In</div>
-              </Link>
+              <div className="logout-nav" onClick={handleLogout}>
+              Logout
+              </div>
             </li>
             <li>
               <Link to="/contact">

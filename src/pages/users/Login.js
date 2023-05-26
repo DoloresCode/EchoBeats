@@ -1,35 +1,33 @@
+// Import necessary libraries and components
 import '../../index.css';
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
+import axios from "axios"; // Library for HTTP requests
 
 
+// Login component
 const Login = (props) => {
+  // Initializing state variables for input fields and error message
   const initialState = { email: "", password: "" }
   const [input, setInput] = useState(initialState)
   const [error, setError] = useState("")
 
+  // Handle input field changes by updating the corresponding state
   const handleChange = async (e) => {
     setInput({ ...input, [e.target.name]: e.target.value })
   }
 
-
-  //   // Reset form inputs
-  //   setEmail("")
-  //   setPassword("")
-  // }
-// export default Login
-
-
-
+// Function to handle login upon form submission
 const handleLogin = async (e) => {
   e.preventDefault()
   try {
     const url = "https://localhost:4000/api/auth";
     const res = await axios.post(url, input); // Post request to the API
+    // If successful, store token in localStorage and redirect to homepage
     localStorage.setItem("token", res.data);
     window.location = "/";
   } catch (error) {
+    // If there's an error, set the error message in state
       if (error.response && error.response.status >= 400 && error.response.status <= 500) {
           setError(error.response.data.message); 
         } else {
@@ -38,8 +36,8 @@ const handleLogin = async (e) => {
   }
 }
 
+// Render the login form
   return (
-    
       <div className="login-container">
         <h1>Welcome Back</h1>
         <h2>Login to your account</h2>

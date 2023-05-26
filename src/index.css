@@ -66,9 +66,23 @@ body {
   color: #17a0a7;
 }
 
+
 .navbar { 
   position: relative;
   z-index: 2; /* the navbar in front*/
+}
+
+.logout-nav {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  font-size: 25px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.logout-nav:hover {
+  color: #17a0a7;
 }
 
 /* WelcomeHeader */

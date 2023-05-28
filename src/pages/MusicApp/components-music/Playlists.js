@@ -2,13 +2,14 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "../MusicApp.css";
 
+
 // Constants for API endpoints and Spotify authorization
 const PLAYLISTS_ENDP = "https://api.spotify.com/v1/me/playlists";
 const CLIENT_ID = process.env.REACT_APP_CLIENT_ID;
 const SPOTIFY_AUTHORIZE_ENDPOINT = "https://accounts.spotify.com/authorize";
 const REDIRECT_URL_AFTER_LOGIN = "http://localhost:3000/playlists";
 const SPACE_DELIMITER = "%20";
-const words = ['Discover', 'Experience', 'Transform']; 
+// const words = ['Discover', 'Experience', 'Transform']; 
 
 // Scopes for Spotify authorization
 const SCOPES = [
@@ -125,31 +126,33 @@ function Playlists() {
     ));
   };
 
-  const [activeWord, setActiveWord] = useState('Discover');
+  const [activeWord, setActiveWord] = useState('Explore');
 
-    // incrementation of the index by 1 making it equal to the lengh of words so it reset it to 0.
-    useEffect(() => {
-        let index = 0;
-        
-        const intervalId = setInterval(() => {
-          index = index + 1 === words.length ? 0 : index + 1;
-          setActiveWord(words[index]); // updates the value of activeWord to the word at the current index of the words array
-        }, 2000); // Change every 2 seconds
-        
-        // Cleanup function to clear the interval when the component unmounts
-        return () => clearInterval(intervalId);
-      }, []); // Empty dependency array to ensure this runs once on mount and not on every update
-
+  // incrementation of the index by 1 making it equal to the lengh of words so it reset it to 0.
+  useEffect(() => {
+      const words = ['Explore', 'Immerse', 'Inspire']; 
+      let index = 0;
+      
+      const intervalId = setInterval(() => {
+        index = index + 1 === words.length ? 0 : index + 1;
+        setActiveWord(words[index]); // updates the value of activeWord to the word at the current index of the words array
+      }, 2000); // Change every 2 seconds
+      
+      // Cleanup function to clear the interval when the component unmounts
+      return () => clearInterval(intervalId);
+    }, []); // Empty dependency array to ensure this runs once on mount and not on every update
+  
   // All the component is render here
   return (
-    <>
-     <h1 style={{ color: "white", fontWeight: "bold", fontSize: "30px", marginLeft: 
-    '5%', paddingBottom: "20px", width: "60%"}}>
-        Dive into our expansive library of albums and playlists. Allow the diverse power of artists from around the globe to ignite your inspiration. 
-        <br />
-        <br />
-        Your journey through music starts here.<span style={{ color: activeWord === 'Discover' ? '#00C4CC' : activeWord === 'Experience' ? '#BF2026' : activeWord === 'Transform' ? 'purple' : '#BF2026', fontSize: "40px" }}> {activeWord}</span>.
-      </h1>
+  <>
+   <h1 style={{ color: "white", fontWeight: "bold", fontSize: "30px", marginLeft: 
+  '5%', paddingBottom: "20px", width: "60%"}}>
+      Browse through our extensive collection of playlists. Discover the diverse range of artists and genres represented. 
+      <br />
+      <br />
+      Your exploration of music begins here.<span style={{ color: activeWord === 'Explore' ? '#FF6347' : activeWord === 'Immerse' ? '#32CD32' : activeWord === 'Inspire' ? '#4169E1' : '#FF6347', fontSize: "40px" }}> {activeWord}</span>.
+  </h1>
+  
 
       {/* Search form */}
       <form className="search-music-form" onSubmit={searchArtists}>

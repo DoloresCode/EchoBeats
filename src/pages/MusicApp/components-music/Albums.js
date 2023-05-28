@@ -8,7 +8,7 @@ const PLAYLISTS_ENDP = "https://api.spotify.com/v1/me/playlists"
 const ALBUMS_ENDP = "https://api.spotify.com/v1/me/albums"
 const CLIENT_ID = process.env.REACT_APP_CLIENT_ID;
 const SPOTIFY_AUTHORIZE_ENDPOINT = "https://accounts.spotify.com/authorize"
-const REDIRECT_URL_AFTER_LOGIN = "http://localhost:3000/music"
+const REDIRECT_URL_AFTER_LOGIN = "http://localhost:3000/albums"
 const SPACE_DELIMITER = "%20"
 const words = ['Discover', 'Experience', 'Transform']; 
 console.log(CLIENT_ID)

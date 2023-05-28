@@ -30,7 +30,12 @@ function Header() {
             </li>
             <li>
               <Link to="/music">
-                <div>Music</div>
+                <div>Albums</div>
+              </Link>
+            </li>
+            <li>
+              <Link to="/playlists">
+                <div>Playlists</div>
               </Link>
             </li>
             <li>

@@ -22,8 +22,8 @@ const SCOPES = [
 ]
 const SCOPES_URL_PARAM = SCOPES.join(SPACE_DELIMITER)
 
-// Define the Music component
-function Music() {
+// Define the Albums component
+function Albums() {
   // Set up state variables
   const [token, setToken] = useState("")
   const [expiresAt, setExpiresAt] = useState("")
@@ -66,13 +66,13 @@ console.log(expiresAt)
         .find((elem) => elem.startsWith("expires_in"))
         .split("=")[1]
       expiresAt = new Date().getTime() + duration * 1000 // the duration comes from Spotify in seconds; localStorage only stores stuff in Strings (so we need to change the Date into a numeric value: getTime() stores a date in milliseconds since Jan 1, 1970)
-      window.location.hash = ""
-      window.localStorage.setItem("expiresAt", expiresAt)
-      window.localStorage.setItem("token", token)
+      window.location.hash = "";
+      window.localStorage.setItem("expiresAt", expiresAt);
+      window.localStorage.setItem("token", token);
     }
     // Set the token and expiration date in state
-    setExpiresAt(expiresAt)
-    setToken(token)
+    setExpiresAt(expiresAt);
+    setToken(token);
   }, []) // This hook runs once when the component mounts
 
   // Function to fetch playlists
@@ -149,8 +149,8 @@ console.log(expiresAt)
         )}
         {artist.name}
       </div>
-    ))
-  }
+    ));
+  };
 
   const [activeWord, setActiveWord] = useState('Discover');
 
@@ -230,4 +230,4 @@ console.log(expiresAt)
   )
 }
 
-export default Music
+export default Albums;

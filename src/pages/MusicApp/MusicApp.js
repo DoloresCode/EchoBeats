@@ -1,11 +1,13 @@
 import React from "react"
-import Music from "./components-music/Music"
+import Albums from "./components-music/Albums"
+import Playlists from "./components-music/Playlists"
 import "./MusicApp.css"
 
 const MusicApp = () => {
   return (
     <div className="container">
-      <Music />
+      <Albums />
+      <Playlists />
     </div>
   )
 }

@@ -4,13 +4,12 @@ import "../MusicApp.css"
 
 // Constants for API endpoints and Spotify authorization - Help get API Key
 // https://developer.spotify.com/documentation/web-api/reference/get-users-saved-albums
-const PLAYLISTS_ENDP = "https://api.spotify.com/v1/me/playlists"
 const ALBUMS_ENDP = "https://api.spotify.com/v1/me/albums"
-const CLIENT_ID = process.env.REACT_APP_CLIENT_ID;
+const CLIENT_ID = process.env.REACT_APP_CLIENT_ID
 const SPOTIFY_AUTHORIZE_ENDPOINT = "https://accounts.spotify.com/authorize"
 const REDIRECT_URL_AFTER_LOGIN = "http://localhost:3000/albums"
 const SPACE_DELIMITER = "%20"
-const words = ['Discover', 'Experience', 'Transform']; 
+const words = ["Discover", "Experience", "Transform"]
 console.log(CLIENT_ID)
 // Scopes for Spotify authorization - access to my Music library,
 const SCOPES = [
@@ -27,20 +26,14 @@ function Albums() {
   // Set up state variables
   const [token, setToken] = useState("")
   const [expiresAt, setExpiresAt] = useState("")
-  const [spfyPlaylistData, setSpfyPlaylistData] = useState({})
   const [spfyAlbumData, setSpfyAlbumData] = useState({})
   const [searchKey, setSearchKey] = useState("")
   const [artists, setArtists] = useState([])
-console.log(expiresAt)
+  console.log(expiresAt)
 
- // Function to clear the fetched playlists
- const resetPlaylists = () => {
-    setSpfyPlaylistData({});
-  }
-
-// Function to clear the fetched albums
+  // Function to clear the fetched albums
   const resetAlbums = () => {
-    setSpfyAlbumData({});
+    setSpfyAlbumData({})
   }
 
   // useEffect hook for handling authorization and setting token - token and expiration duration are retrieve from URL hash fragment or local storage if they exist there.
@@ -50,7 +43,6 @@ console.log(expiresAt)
     let token = window.localStorage.getItem("token")
     let expiresAt = window.localStorage.getItem("expiresAt")
 
-        
     //If the token is expired or not present in local storage, the hook retrieves it from the URL and sets it in local storage.
     if (!token || !expiresAt || expiresAt < new Date().getTime()) {
       /* I need to sign in to get an access token; that's the token I put in Bearer Authorization here */
@@ -66,30 +58,15 @@ console.log(expiresAt)
         .find((elem) => elem.startsWith("expires_in"))
         .split("=")[1]
       expiresAt = new Date().getTime() + duration * 1000 // the duration comes from Spotify in seconds; localStorage only stores stuff in Strings (so we need to change the Date into a numeric value: getTime() stores a date in milliseconds since Jan 1, 1970)
-      window.location.hash = "";
-      window.localStorage.setItem("expiresAt", expiresAt);
-      window.localStorage.setItem("token", token);
+      window.location.hash = ""
+      window.localStorage.setItem("expiresAt", expiresAt)
+      window.localStorage.setItem("token", token)
     }
     // Set the token and expiration date in state
-    setExpiresAt(expiresAt);
-    setToken(token);
+    setExpiresAt(expiresAt)
+    setToken(token)
   }, []) // This hook runs once when the component mounts
 
-  // Function to fetch playlists
-  const handlePlaylists = () => {
-    axios
-      .get(PLAYLISTS_ENDP, {
-        headers: {
-          Authorization: "Bearer " + token,
-        },
-      })
-      .then((response) => {
-        setSpfyPlaylistData(response.data)
-      })
-      .catch((error) => {
-        console.log(error)
-      })
-  }
   // Function to fetch albums
   const handleAlbums = () => {
     axios
@@ -149,48 +126,77 @@ console.log(expiresAt)
         )}
         {artist.name}
       </div>
-    ));
-  };
+    ))
+  }
 
-  const [activeWord, setActiveWord] = useState('Discover');
+  const [activeWord, setActiveWord] = useState("Discover")
 
   // incrementation of the index by 1 making it equal to the lengh of words so it reset it to 0.
   useEffect(() => {
-    let index = 0;
-    
-    const intervalId = setInterval(() => {
-      index = index + 1 === words.length ? 0 : index + 1;
-      setActiveWord(words[index]); // updates the value of activeWord to the word at the current index of the words array
-    }, 2000); // Change every 2 seconds
-    
-    // Cleanup function to clear the interval when the component unmounts
-    return () => clearInterval(intervalId);
-  }, []); // Empty dependency array to ensure this runs once on mount and not on every update
+    let index = 0
 
+    const intervalId = setInterval(() => {
+      index = index + 1 === words.length ? 0 : index + 1
+      setActiveWord(words[index]) // updates the value of activeWord to the word at the current index of the words array
+    }, 2000) // Change every 2 seconds
+
+    // Cleanup function to clear the interval when the component unmounts
+    return () => clearInterval(intervalId)
+  }, []) // Empty dependency array to ensure this runs once on mount and not on every update
 
   // All the component is render here
   // When I click "Get Albums" or "Get Playlists", the app makes a GET request to the Spotify API with the access token in the Authorization header. The access token lets Spotify know that my app is authorized to access the user's Spotify data. The API responds with the user's saved albums or playlists (mine), respectively, and these are set in the component's state and displayed in the app (EchoBeats).
   return (
     <>
-
-  <h1 style={{ color: "white", fontWeight: "bold", fontSize: "30px", marginLeft: 
-    '5%', paddingBottom: "20px", width: "60%"}}>
-        Dive into our expansive library of albums and playlists. Allow the diverse power of artists from around the globe to ignite your inspiration. 
+      <h1
+        style={{
+          color: "white",
+          fontWeight: "bold",
+          fontSize: "30px",
+          marginLeft: "5%",
+          paddingBottom: "20px",
+          width: "60%",
+        }}
+      >
+        Dive into our expansive library of albums and playlists. Allow the
+        diverse power of artists from around the globe to ignite your
+        inspiration.
         <br />
         <br />
-        Your journey through music starts here.<span style={{ color: activeWord === 'Discover' ? '#00C4CC' : activeWord === 'Experience' ? '#BF2026' : activeWord === 'Transform' ? 'purple' : '#BF2026', fontSize: "40px" }}> {activeWord}</span>.
+        Your journey through music starts here.
+        <span
+          style={{
+            color:
+              activeWord === "Discover"
+                ? "#00C4CC"
+                : activeWord === "Experience"
+                ? "#BF2026"
+                : activeWord === "Transform"
+                ? "purple"
+                : "#BF2026",
+            fontSize: "40px",
+          }}
+        >
+          {" "}
+          {activeWord}
+        </span>
+        .
       </h1>
 
       {/* Search form */}
       <form className="search-music-form" onSubmit={searchArtists}>
-        <input type="text" onChange={(e) => setSearchKey(e.target.value)} id="search-field" />
+        <input
+          type="text"
+          onChange={(e) => setSearchKey(e.target.value)}
+          id="search-field"
+        />
         <button type={"submit"}>Search</button>
       </form>
 
       {/* {/* FOR ALBUM */}
       <div className="album-button-container">
         <button onClick={handleAlbums}>Get Albums</button>
-        <button onClick={resetAlbums}>Reset Albums</button> 
+        <button onClick={resetAlbums}>Reset Albums</button>
       </div>
       {/* Artist rendering */}
       <div className="artists-container">{renderArtists()}</div>
@@ -207,27 +213,8 @@ console.log(expiresAt)
             ))
           : null}
       </div>
-
-      {/* {/* FOR PLAYLISTS */}
-      <div className="playlist-button-container">
-        <button onClick={handlePlaylists}>Get Playlists</button>
-        <button onClick={resetPlaylists}>Reset Playlists</button>
-      </div>
-      <div className="card-grid">
-        {spfyPlaylistData?.items
-          ? spfyPlaylistData.items.map((playlist, index) => (
-              <div key={index}>
-                <img src={playlist.images[0]?.url} alt="Playlist cover" />{" "}
-                {/* Display playlist image */}
-                <button onClick={() => play(playlist.id, "playlist")}>
-                  {playlist.name}
-                </button>
-              </div>
-            ))
-          : null}
-      </div>
     </>
   )
 }
 
-export default Albums;
+export default Albums

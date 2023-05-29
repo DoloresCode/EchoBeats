@@ -1,6 +1,6 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import logo from '../Pictures/Logo_echobeats_black.png';
+import React from "react"
+import { Link } from "react-router-dom"
+import logo from "../Pictures/Logo_echobeats_black.png"
 
 function WelcomeHeader() {
   return (
@@ -13,11 +13,6 @@ function WelcomeHeader() {
       <nav className="navbar">
         <ul className="nav-list">
           <li>
-            <Link to="/home" className="nav-link">
-              Home
-            </Link>
-          </li>
-          <li>
             <Link to="/about" className="nav-link">
               About
             </Link>
@@ -28,8 +23,8 @@ function WelcomeHeader() {
             </Link>
           </li>
           <li>
-          <Link to="/signup" className="nav-link">
-              <button className="nav-button">Sign In</button>
+            <Link to="/signup" className="nav-link">
+              <button className="nav-button">Sign Up</button>
             </Link>
           </li>
           <li>
@@ -40,7 +35,7 @@ function WelcomeHeader() {
         </ul>
       </nav>
     </header>
-  );
+  )
 }
 
-export default WelcomeHeader;
+export default WelcomeHeader

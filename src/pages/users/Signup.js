@@ -11,19 +11,6 @@ const Signup = ({ signUp, onFormSwitch }) => {
   const [error, setError] = useState("")
   const navigate = useNavigate()
 
-  //   const [firstName, setFirstName] = useState("");
-  //   const [lastName, setLastName] = useState("");
-  //   const [email, setEmail] = useState("");
-  //   const [password, setPassword] = useState("");
-
-  //     // Reset form inputs
-  //     setFirstName("");
-  //     setLastName("");
-  //     setEmail("");
-  //     setPassword("");
-  //   };
-  //     setInput(initialState)
-  //   }
 
   const handleChange = (e) => {
     setInput({ ...input, [e.target.name]: e.target.value })

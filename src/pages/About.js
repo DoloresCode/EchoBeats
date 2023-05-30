@@ -3,7 +3,7 @@ import imageAbout from "../Pictures/Dolores_Crazover_picture.png"
 function About() {
   return (
     <div className="about-container">
-      <h2>About EchoBeats</h2>
+      <h3>About EchoBeats</h3>
       <div className="p-about-container">
         <p>
           EchoBeats is a musical journey, immersing you in diverse music styles
@@ -12,7 +12,9 @@ function About() {
           scene in a unique way.
         </p>
       </div>
+      <div className="advantages-container">
       <h3>Advantages of EchoBeats</h3>
+      <div className="li-advantages-container">
       <ul>
         <li>Seamless integration with a powerful music library API </li>
         <li>Intuitive user interface for effortless music exploration</li>
@@ -25,6 +27,8 @@ function About() {
           from around the world
         </li>
       </ul>
+      </div>
+      </div>
       <div className="about-developer-container">
         <h3>About the Developer</h3>
         <p>

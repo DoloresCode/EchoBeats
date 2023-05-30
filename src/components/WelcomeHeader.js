@@ -13,16 +13,6 @@ function WelcomeHeader() {
       <nav className="navbar">
         <ul className="nav-list">
           <li>
-            <Link to="/about" className="nav-link">
-              About
-            </Link>
-          </li>
-          <li>
-            <Link to="/contact" className="nav-link">
-              Contact
-            </Link>
-          </li>
-          <li>
             <Link to="/signup" className="nav-link">
               <button className="nav-button">Sign Up</button>
             </Link>

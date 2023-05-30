@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react"
 import axios from "axios"
 import "../MusicApp.css"
 
-
 // Constants for API endpoints and Spotify authorization - Help get API Key
 // https://developer.spotify.com/documentation/web-api/reference/get-users-saved-albums
 const ALBUMS_ENDP = "https://api.spotify.com/v1/me/albums?limit=50"
@@ -63,6 +62,7 @@ function Albums() {
       window.localStorage.setItem("expiresAt", expiresAt)
       window.localStorage.setItem("token", token)
     }
+    console.log("token", token)
     // Set the token and expiration date in state
     setExpiresAt(expiresAt)
     setToken(token)

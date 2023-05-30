@@ -16,18 +16,17 @@ import Private from "./components/Private"
 
 function App() {
   console.log(useLocation())
-  const user = localStorage.getItem("token")
+  const user = localStorage.getItem("auth_token")
 
-  const { pathname } = useLocation();
-  let header;
+  const { pathname } = useLocation()
+  let header
   if (pathname === "/") {
-    header = <WelcomeHeader />;
+    header = <WelcomeHeader />
   } else if (pathname === "/signup" || pathname === "/login") {
-    header = <SignupLoginHeader />; // Render the specific header for signup and login pages
+    header = <SignupLoginHeader /> // Render the specific header for signup and login pages
   } else {
-    header = <Header />;
+    header = <Header />
   }
-
 
   return (
     <div>

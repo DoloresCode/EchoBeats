@@ -23,7 +23,7 @@ const Login = (props) => {
       const url = `${process.env.REACT_APP_API_BASEURL}/auth/login`
       const res = await axios.post(url, input) // Post request to the API
       // If successful, store token in localStorage and redirect to homepage
-      localStorage.setItem("token", JSON.stringify(res.data.data))
+      localStorage.setItem("auth_token", JSON.stringify(res.data.data))
       // Rederect to homePage after successful login
       alert("Login successful")
       window.location = "/home"

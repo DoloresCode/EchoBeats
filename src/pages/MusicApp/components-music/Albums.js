@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react"
 import axios from "axios"
 import "../MusicApp.css"
 
+
 // Constants for API endpoints and Spotify authorization - Help get API Key
 // https://developer.spotify.com/documentation/web-api/reference/get-users-saved-albums
-const ALBUMS_ENDP = "https://api.spotify.com/v1/me/albums"
+const ALBUMS_ENDP = "https://api.spotify.com/v1/me/albums?limit=50"
 const CLIENT_ID = process.env.REACT_APP_CLIENT_ID
 const SPOTIFY_AUTHORIZE_ENDPOINT = "https://accounts.spotify.com/authorize"
 const REDIRECT_URL_AFTER_LOGIN = "http://localhost:3000/albums"

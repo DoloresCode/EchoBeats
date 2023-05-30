@@ -1,4 +1,5 @@
 import imageAbout from "../Pictures/Dolores_Crazover_picture.png"
+import { Link } from "react-router-dom";
 
 function About() {
   return (
@@ -28,6 +29,10 @@ function About() {
         </li>
       </ul>
       </div>
+      <div className="advantagesmusic-buttons-container">
+          <Link to="/albums" className="advantage-button">Go to Albums</Link>
+          <Link to="/playlists" className="advantage-button">Go to Playlists</Link>
+        </div>
       </div>
       <div className="about-developer-container">
         <h3>About the Developer</h3>

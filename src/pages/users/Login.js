@@ -20,7 +20,7 @@ const Login = (props) => {
   const handleLogin = async (e) => {
     e.preventDefault()
     try {
-      const url = `${process.env.REACT_APP_API_BASEURL}/auth/login`
+      const url = `https://echobeats-backend-auth.onrender.com/api/auth/login`
       const res = await axios.post(url, input) // Post request to the API
       // If successful, store token in localStorage and redirect to homepage
       localStorage.setItem("auth_token", JSON.stringify(res.data.data))

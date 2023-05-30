@@ -11,7 +11,6 @@ const Signup = ({ signUp, onFormSwitch }) => {
   const [error, setError] = useState("")
   const navigate = useNavigate()
 
-
   const handleChange = (e) => {
     setInput({ ...input, [e.target.name]: e.target.value })
   }
@@ -19,7 +18,7 @@ const Signup = ({ signUp, onFormSwitch }) => {
   const handleSignup = async (e) => {
     e.preventDefault()
     try {
-      const url = `${process.env.REACT_APP_API_BASEURL}/auth/signup`
+      const url = `https://echobeats-backend-auth.onrender.com/api/auth/signup`
       await axios.post(url, input)
       alert("registration successful...")
       navigate("/login")

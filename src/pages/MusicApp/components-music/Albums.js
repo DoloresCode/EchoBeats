@@ -7,7 +7,7 @@ import "../MusicApp.css"
 const ALBUMS_ENDP = "https://api.spotify.com/v1/me/albums?limit=50"
 const CLIENT_ID = process.env.REACT_APP_CLIENT_ID
 const SPOTIFY_AUTHORIZE_ENDPOINT = "https://accounts.spotify.com/authorize"
-const REDIRECT_URL_AFTER_LOGIN = "http://localhost:3000/albums"
+const REDIRECT_URL_AFTER_LOGIN = "https://echobeats.netlify.app/albums"
 const SPACE_DELIMITER = "%20"
 const words = ["Discover", "Experience", "Transform"]
 console.log(CLIENT_ID)

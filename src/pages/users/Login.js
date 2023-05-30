@@ -20,18 +20,21 @@ const Login = (props) => {
   const handleLogin = async (e) => {
     e.preventDefault()
     try {
-      const url = "https://localhost:4000/api/auth"
+      const url = `${process.env.REACT_APP_API_BASEURL}/auth/login`
       const res = await axios.post(url, input) // Post request to the API
       // If successful, store token in localStorage and redirect to homepage
-      localStorage.setItem("token", res.data)
-      window.location = "/"
+      localStorage.setItem("token", res.data.data)
+      //window.location = "/"
     } catch (error) {
-      // If there's an error, set the error message in state
-      // if (error.response && error.response.status >= 400 && error.response.status <= 500) {
-      //     setError(error.response.data.message);
-      //   } else {
-      setError(error.response.data.message)
-      // }
+      if (
+        error.response &&
+        error.response.data &&
+        error.response.data.message
+      ) {
+        setError(error.response.data.message)
+      } else {
+        setError("An error occurred. Please try again.") // Fallback error message
+      }
     }
   }
 

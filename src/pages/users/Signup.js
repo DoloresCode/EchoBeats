@@ -6,7 +6,7 @@ import axios from "axios" // Library for HTTP requests
 
 // ATTENTION remove signUP below as it is not used
 const Signup = ({ signUp, onFormSwitch }) => {
-  const initialState = { firstName: "", lastName: "", email: "", password: "" }
+  const initialState = { firstname: "", lastname: "", email: "", password: "" }
   const [input, setInput] = useState(initialState)
   const [error, setError] = useState("")
   const navigate = useNavigate()
@@ -32,20 +32,12 @@ const Signup = ({ signUp, onFormSwitch }) => {
   const handleSignup = async (e) => {
     e.preventDefault()
     try {
-      const url = "http://localhost:4000/api/users"
-      const { data: res } = await axios.post(url, input)
+      const url = `${process.env.REACT_APP_API_BASEURL}/auth/signup`
+      await axios.post(url, input)
+      alert("registration successful...")
       navigate("/login")
-      console.log(res.message)
     } catch (error) {
-      if (
-        error.response &&
-        error.response.status >= 400 &&
-        error.response.status <= 500
-      ) {
-        setError(error.response.data.message)
-      } else {
-        setError(error.response.data.message)
-      }
+      setError(error.message)
     }
   }
 
@@ -58,8 +50,8 @@ const Signup = ({ signUp, onFormSwitch }) => {
           <input
             type="text"
             placeholder="First Name"
-            name="firstName"
-            value={input.firstName}
+            name="firstname"
+            value={input.firstname}
             onChange={handleChange}
             required
           />
@@ -69,8 +61,8 @@ const Signup = ({ signUp, onFormSwitch }) => {
           <input
             type="text"
             placeholder="Last Name"
-            name="lastName"
-            value={input.lastName}
+            name="lastname"
+            value={input.lastname}
             onChange={handleChange}
             required
           />

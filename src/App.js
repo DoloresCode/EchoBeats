@@ -11,6 +11,7 @@ import Contact from "./pages/Contact"
 import Header from "./components/Header"
 import WelcomeHeader from "./components/WelcomeHeader"
 import Footer from "./components/Footer"
+import Private from "./components/Private"
 
 function App() {
   // const [currentForm, setCurrentForm] = useState("login");
@@ -30,8 +31,8 @@ function App() {
         <Route path="/" element={<Welcome />} />
         {user && <Route path="/home" element={<Home />} />}
         <Route path="/about" element={<About />} />
-        <Route path="/albums" element={<Albums />} />
-        <Route path="/playlists" element={<Playlists />} />
+        <Route path="/albums" element={<Private Component={Albums} />} />
+        <Route path="/playlists" element={<Private Component={Playlists} />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/contact" element={<Contact />} />

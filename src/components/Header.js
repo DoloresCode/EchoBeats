@@ -7,7 +7,8 @@ function Header() {
 
   const handleLogout = () => {
     localStorage.removeItem("token")
-    navigate("/login")
+    alert("You have been logged out!")
+    navigate("/")
   }
   return (
     <header className="header">
@@ -36,11 +37,6 @@ function Header() {
           <li>
             <Link to="/playlists">
               <div>Playlists</div>
-            </Link>
-          </li>
-          <li>
-            <Link to="/login">
-              <div>Login</div>
             </Link>
           </li>
           <li>

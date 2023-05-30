@@ -2,7 +2,7 @@ import React from "react"
 import { Navigate } from "react-router-dom"
 
 function Private({ Component }) {
-  const isAuthenticated = localStorage.getItem("auth_status")
+  const isAuthenticated = JSON.parse(localStorage.getItem("token"))
   return isAuthenticated ? <Component /> : <Navigate to="/login" />
 }
 

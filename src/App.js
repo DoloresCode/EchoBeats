@@ -14,11 +14,6 @@ import Footer from "./components/Footer"
 import Private from "./components/Private"
 
 function App() {
-  // const [currentForm, setCurrentForm] = useState("login");
-
-  // const toggleForm = (formName) => {
-  //   setCurrentForm(formName);
-  // };
   console.log(useLocation())
   const user = localStorage.getItem("token")
   return (

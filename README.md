@@ -10,9 +10,16 @@ EchoBeats: Inspiring Global Music Exploration. Discover, search, and get inspire
 
 # Wireframes
 
-![EchoBeats-Welcome-Page](https://github.com/DoloresCode/Portfolio_Website/assets/117631390/b3da0dc3-a6c4-419d-ada9-0bd95bb363b7)
+<img width="1368" alt="EchoBeats-Welcome-Page" src="https://github.com/DoloresCode/EchoBeats_Backend/assets/117631390/5c722970-c3e1-4284-bfe9-04bbe9b7b290">
 
-![Music-Page](https://github.com/DoloresCode/Portfolio_Website/assets/117631390/221e4f67-d105-45df-bb0f-1eee4b5a25d6)
+<img width="1369" alt="Albums-Page" src="https://github.com/DoloresCode/EchoBeats_Backend/assets/117631390/c339b4de-b9f8-45ea-a2bb-a32d55a1d20c">
+
+<img width="1405" alt="Albums" src="https://github.com/DoloresCode/EchoBeats_Backend/assets/117631390/dfd4bacf-36fe-499f-baba-971e7ab88e99">
+
+<img width="1354" alt="Playlists-Page" src="https://github.com/DoloresCode/EchoBeats_Backend/assets/117631390/5f78d664-5509-4c68-b869-b1d843e2faa8">
+
+
+<img width="744" alt="Signup" src="https://github.com/DoloresCode/EchoBeats_Backend/assets/117631390/31bee331-700e-44de-957c-cdfb2b2cb091">
 
 # Logos 
 

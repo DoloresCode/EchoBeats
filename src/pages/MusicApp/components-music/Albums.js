@@ -191,7 +191,7 @@ function Albums() {
       </h1>
 
       {/* Search form */}
-      <form className="search-music-form" onSubmit={(e) => { e.preventDefault(); setSearchKey(e.target.value) }}>
+      <form className="search-music-form" onSubmit={searchArtists}>
         <input
           type="text"
           onChange={(e) => setSearchKey(e.target.value)}

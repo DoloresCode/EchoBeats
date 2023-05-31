@@ -36,6 +36,12 @@ function Albums() {
     setSpfyAlbumData({})
   }
 
+   // Function to reset the search results
+   const resetSearch = () => {
+    setSearchKey("");
+    setArtists([]);
+  };
+
   // useEffect hook for handling authorization and setting token - token and expiration duration are retrieve from URL hash fragment or local storage if they exist there.
   useEffect(() => {
     // Code to handle authorization
@@ -192,6 +198,7 @@ function Albums() {
           id="search-field"
         />
         <button type={"submit"}>Search</button>
+        <button type="button" onClick={resetSearch}>Reset Search</button>
       </form>
 
       {/* {/* FOR ALBUM */}

@@ -34,6 +34,12 @@ function Playlists() {
     setSpfyPlaylistData({})
   }
 
+     // Function to reset the search results
+     const resetSearch = () => {
+      setSearchKey("");
+      setArtists([]);
+    };
+
   // useEffect hook for handling authorization and setting token
   useEffect(() => {
     // Code to handle authorization
@@ -186,6 +192,7 @@ function Playlists() {
           id="search-field"
         />
         <button type={"submit"}>Search</button>
+        <button type="button" onClick={resetSearch}>Reset Search</button>
       </form>
 
       {/* Artist rendering */}

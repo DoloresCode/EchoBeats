@@ -34,13 +34,13 @@ Please refer to Spotify's Web API docs https://developer.spotify.com/documentati
 If you wish to run the code locally run the following.
 
 
-- 1 - Install Dependencies: npm install
-- 2 - Set up Environment Variables: touch .env (for CLIENT_SECRET key if needed and client_ID)
-- 3 - npm start
-- 3 - visit http://localhost:3000
+- 1 - Go to [https://echobeats.netlify.app/]
+- 1 - Sign up to EchoBeats for the first time you register with the following parameters: First Mame, Last Name, Email and Password
+- 2 - If you already have an account, you can directly log in with your email and password.
+- 3 - Once authenticated, you can access the website, but to access the Spotify album and playlist cover inspirations, you'll need to sign up or log in to your Spotify account once you've clicked on the Albums or Playlists pages.
+- 3 - Enjoy
 
-- 1 - Create a Spotify Developer Account: Visit the Spotify Developer Dashboard (https://developer.spotify.com/dashboard/)
-- 2 - Create a new Spotify Application
+Please refer to Spotify's Web API docs https://developer.spotify.com/documentation/web-api for more information.
 
 
 # Technologies
@@ -54,7 +54,8 @@ Front-End Development:
 Back-End Development:
 * Node.js
 * Express.js
-* JWT
+* JWT(JSON Web Token) 
+* MongoDB/ Mongoose
 
 # Future updates 
 

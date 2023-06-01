@@ -74,8 +74,8 @@ const Signup = ({ signUp, onFormSwitch }) => {
             onChange={handleChange}
             required
           />
-          <p style={{fontSize: "12px"}}>
-            Please create a password with a minimum of 12 characters. It must include at least 1 lower case letter, 1 upper case letter, and 1 symbol for enhanced security.
+          <p style={{fontSize: "11px", color: "#555555", fontStyle: "italic"}}>
+            *Please create a password with a minimum of 12 characters. It must include at least 1 lower case letter, 1 upper case letter, and 1 symbol for enhanced security.
           </p>
         </div>
         {error && <div className="error-msg">{error}</div>}
